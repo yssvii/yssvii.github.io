@@ -1,1 +1,131 @@
-111111111
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>给我最爱的你 🎄</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px 32px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 16px;
+      opacity: 0.95;
+    }
+
+    .heart {
+      font-size: 36px;
+      margin: 20px 0;
+      animation: beat 1.5s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .btn {
+      margin-top: 28px;
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+
+    .snow {
+      position: fixed;
+      top: -10px;
+      color: #fff;
+      font-size: 14px;
+      opacity: 0.8;
+      user-select: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>圣诞快乐，我的爱 🎄</h1>
+    <p>
+      这是一个为你准备的小小圣诞惊喜。<br />
+      感谢你出现在我的生命里，
+      让平凡的每一天都变得闪闪发光。
+    </p>
+    <div class="heart">❤️</div>
+    <p>
+      无论未来有多少风雪，
+      我都愿意牵着你的手一起走。
+    </p>
+    <a class="btn" href="javascript:void(0)">我爱你</a>
+    <footer>
+      —— 永远爱你的老公
+    </footer>
+  </div>
+
+  <script>
+    const snowCount = 30;
+    for (let i = 0; i < snowCount; i++) {
+      const snow = document.createElement('div');
+      snow.className = 'snow';
+      snow.innerText = '❄';
+      snow.style.left = Math.random() * 100 + 'vw';
+      snow.style.animationDuration = 5 + Math.random() * 5 + 's';
+      snow.style.fontSize = 12 + Math.random() * 16 + 'px';
+      document.body.appendChild(snow);
+    }
+  </script>
+</body>
+</html>
